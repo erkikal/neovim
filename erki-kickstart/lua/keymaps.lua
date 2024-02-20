@@ -88,6 +88,7 @@ keymap("n", "<leader>fp", ":Telescope zoxide list<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<space>fe",  ":Telescope file_browser<CR>", opts)
 
+keymap("n", "<leader>gs", vim.cmd.Git)
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
