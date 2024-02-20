@@ -7,7 +7,7 @@ rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 mkdir -p "$HOME/.vim/undodir"
 mkdir -p "$HOME/.scripts"
-cp "$gitpath/.ignore" "$HOME/.ignore"
+#cp "$gitpath/.ignore" "$HOME/.ignore"
 ln -s "$gitpath/erki-kickstart" "$HOME/.config/nvim"
 # Share system clipboard with unnamedplus
 #sudo apt install vim-gtk3 ripgrep fd-find xclip neovim python3-venv luarocks golang-go shellcheck -y
