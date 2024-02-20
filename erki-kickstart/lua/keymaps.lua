@@ -107,3 +107,6 @@ keymap("n", "<Leader>5", "5gt<CR>", opts)
 keymap("n", "<Leader>t", "<cmd> tabnew<CR>", opts)
 keymap("n", "<Leader>c", "<cmd> tabclose<CR>", opts)
 
+-- Dismiss Noice Message
+keymap("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
+
