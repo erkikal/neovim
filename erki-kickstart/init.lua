@@ -182,7 +182,9 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
- { import = 'custom.plugins' },
+
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -532,20 +534,38 @@ require('telescope').setup{
   }
 }
 
-require 'synthwave84'.setup({
-  glow = {
-    error_msg = true,
-    type2 = true,
-    func = true,
-    keyword = true,
-    operator = false,
-    buffer_current_target = true,
-    buffer_visible_target = true,
-    buffer_inactive_target = true,
-  }
-})
+-- require 'synthwave84'.setup({
+--   glow = {
+--     error_msg = true,
+--     type2 = true,
+--     func = true,
+--     keyword = true,
+--     operator = false,
+--     buffer_current_target = true,
+--     buffer_visible_target = true,
+--     buffer_inactive_target = true,
+--   }
+-- })
+--
+-- vim.cmd[[colorscheme synthwave84]]
 
-vim.cmd[[colorscheme synthwave84]]
+require("catppuccin").setup {
+  flavour = "mocha",
+  background = {
+    light = "macchiato",
+    dark = "mocha",
+  },
+  color_overrides = {
+    mocha = {
+      base = "#000000",
+    },
+  },
+  integrations = {
+    gitsigns = true
+  },
+}
+
+vim.cmd.colorscheme "catppuccin"
 
 
 function delete_file_swaps()
