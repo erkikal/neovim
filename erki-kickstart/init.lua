@@ -191,7 +191,7 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
--- Make line numbers default
+-- Make line numbers default and relative
 vim.wo.number = true
 vim.wo.relativenumber = true
 -- Enable mouse mode
@@ -200,12 +200,14 @@ vim.o.mouse = 'a'
 vim.o.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.o.breakindent = true
+vim.opt.smartindent = true
 -- Save undo history
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
+vim.opt.scrolloff = 8
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
@@ -218,7 +220,6 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.opt.undofile = true
-vim.wo.relativenumber = true
 vim.opt.spell = true
 -- [[ Basic Keymaps ]]
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

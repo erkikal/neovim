@@ -28,6 +28,12 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+keymap("n", "J", "mzJ`z")
+keymap("n", "C-d", "C-d>zz")
+keymap("n", "C-u", "C-u>zz")
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -38,8 +44,26 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
+-- Search and replace
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Make file executable
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+
+-- Better yank
+keymap({"n", "v"}, "<leader>y", "\"+y")
+keymap("n", "<leader>Y", "\"+Y")
+
+-- Better delete
+keymap({"n", "v"}, "<leader>d", [["_d]])
+
+-- Easy :so
+keymap("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
 
 -- Insert --
 -- Press jj fast to enter
@@ -49,6 +73,10 @@ keymap("i", "jj", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '>-2<CR>gv=gv")
+
+keymap("x", "<leader>p", [["_dP]])
 
 -- Plugins --
 keymap("n", "<leader>a", ":Alpha<CR>", opts)
