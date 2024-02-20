@@ -113,6 +113,9 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
+  {"hrsh7th/cmp-buffer"},
+  {"hrsh7th/cmp-path"},
+  {"hrsh7th/cmp-cmdline"},
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
@@ -483,6 +486,29 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- '/' cmdline setup
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- ':' cmdline setup
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+      {
+        name = 'cmdline',
+        option = {
+          ignore_cmds = { 'Man', '!' }
+        }
+      }
+    })
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
