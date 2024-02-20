@@ -97,7 +97,7 @@ keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(v
 keymap("n", "<leader>p", "<cmd> PasteImg <CR>", opts)
 keymap("n", "<leader>e", "$", opts)
 keymap("n", "S", "<cmd> %s//g", opts)
-keymap("n", "<F5>", "<cmd> UndotreeToggle <CR> <cmd> UndotreeFocus <CR>", opts)
+keymap("n", "<leader>uu", "<cmd> UndotreeToggle <CR> <cmd> UndotreeFocus <CR>", opts)
 keymap("n", "<C-\\>", "<cmd> TZAtaraxis <CR>", opts)
 keymap("n", "<Leader>1", "1gt<CR>", opts)
 keymap("n", "<Leader>2", "2gt<CR>", opts)
