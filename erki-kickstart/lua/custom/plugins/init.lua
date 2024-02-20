@@ -34,4 +34,15 @@ return {
   "lambdalisue/suda.vim",
   "lunarvim/synthwave84.nvim",
   "github/copilot.vim",
+
+-- Erki's additions
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 }
