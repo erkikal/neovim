@@ -45,7 +45,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Search and replace
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left><C-w>]])
 
 -- Make file executable
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
@@ -97,7 +97,6 @@ keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(v
 -- Custom
 -- keymap("n", "<leader>p", "<cmd> PasteImg <CR>", opts)
 keymap("n", "<leader>e", "$", opts)
-keymap("n", "S", "<cmd> %s//g", opts)
 keymap("n", "<leader>uu", "<cmd> UndotreeToggle <CR> <cmd> UndotreeFocus <CR>", opts)
 keymap("n", "<C-\\>", "<cmd> TZAtaraxis <CR>", opts)
 keymap("n", "<Leader>1", "1gt<CR>", opts)
