@@ -215,6 +215,18 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
+  {
+    "DreamMaoMao/yazi.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+
+    keys = {
+      { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+    },
+  },
+
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
