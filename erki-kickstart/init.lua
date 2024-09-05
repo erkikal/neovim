@@ -1,4 +1,5 @@
 require('keymaps')
+require('custom.plugins.autopairs')
 --[[
 
 =====================================================================
