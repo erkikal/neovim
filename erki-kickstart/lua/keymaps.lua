@@ -86,7 +86,7 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope zoxide list<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<space>fe",  ":Telescope file_browser<CR>", opts)
+keymap("n", "<leader>fe", ":Telescope file_browser<CR>", opts)
 
 keymap("n", "<leader>gs", vim.cmd.Git)
 keymap("n", "<leader>gg", vim.cmd.LazyGit)
@@ -110,3 +110,5 @@ keymap("n", "<Leader>c", "<cmd> tabclose<CR>", opts)
 -- Dismiss Noice Message
 keymap("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
 
+-- Markdown Preview
+keymap({"n", "v"}, "<leader>mp", ":MarkdownPreviewToggle<CR>", opts)

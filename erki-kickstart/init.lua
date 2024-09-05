@@ -342,6 +342,14 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Folding keymaps
+vim.keymap.set('n', 'zm', require('ufo').closeAllFolds, { desc = '󱃄 Close All Folds' })
+-- vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds { "comment", "imports" }, { desc = "󱃄 Open All Regular Folds" })
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = "󱃄 Open All Folds" })
+-- vim.keymap.set('n', 'z1', require('ufo').closeFoldsWith(1), { desc = "󱃄 Close L1 Folds" })
+-- vim.keymap.set('n', 'z2', require('ufo').closeFoldsWith(2), { desc = "󱃄 Close L2 Folds" })
+-- vim.keymap.set('n', 'z3', require('ufo').closeFoldsWith(3), { desc = "󱃄 Close L3 Folds" })
+-- vim.keymap.set('n', 'z4', require('ufo').closeFoldsWith(4), { desc = "󱃄 Close L4 Folds" })
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
