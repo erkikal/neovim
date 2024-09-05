@@ -87,6 +87,7 @@ return {
           path = "~/Documents/Notes",
         },
       },
+      conceallevel = 1,
       completion = {
         nvim_cmp = true,
         min_chars = 2,
