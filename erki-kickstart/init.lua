@@ -297,6 +297,8 @@ vim.opt.expandtab = true
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.opt.undofile = true
 vim.opt.spell = true
+-- Set conceallevel to !0 for Obsidian.nvim
+vim.opt.conceallevel = 1
 -- [[ Basic Keymaps ]]
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
@@ -420,6 +422,7 @@ vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = "󱃄 Open All F
 -- vim.keymap.set('n', 'z2', require('ufo').closeFoldsWith(2), { desc = "󱃄 Close L2 Folds" })
 -- vim.keymap.set('n', 'z3', require('ufo').closeFoldsWith(3), { desc = "󱃄 Close L3 Folds" })
 -- vim.keymap.set('n', 'z4', require('ufo').closeFoldsWith(4), { desc = "󱃄 Close L4 Folds" })
+
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -480,6 +483,7 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  terraformls = {},
 
   lua_ls = {
     Lua = {
@@ -595,7 +599,7 @@ cmp.setup.cmdline(':', {
 ---
 -- Titus Custom Markdown HUGO Image Insert
 ---
-require'clipboard-image'.setup {
+--[[ require'clipboard-image'.setup {
   markdown = {
    img_dir = {"content/images", "%:p:h:t", "%:t:r"},
    img_dir_txt = {"/images", "%:p:h:t", "%:t:r"},
@@ -610,7 +614,7 @@ require'clipboard-image'.setup {
       return name
     end,
   }
-}
+} ]]
 
 -- Useful for easily creating commands
 local z_utils = require("telescope._extensions.zoxide.utils")
@@ -660,11 +664,6 @@ require("catppuccin").setup {
     light = "macchiato",
     dark = "mocha",
   },
-  color_overrides = {
-    mocha = {
-      base = "#000000",
-    },
-  },
   integrations = {
     gitsigns = true
   },
@@ -701,7 +700,7 @@ end
 vim.cmd('command! DeleteFileSwaps :lua delete_file_swaps()')
 
 vim.o.shortmess = vim.o.shortmess .. 'A'
-vim.o.noshortname = true
+-- vim.o.noshortname = true
 
 vim.g.gui_font_default_size = 12
 vim.g.gui_font_size = vim.g.gui_font_default_size
