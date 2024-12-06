@@ -297,6 +297,8 @@ vim.opt.expandtab = true
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.opt.undofile = true
 vim.opt.spell = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 -- Set conceallevel to !0 for Obsidian.nvim
 vim.opt.conceallevel = 1
 -- [[ Basic Keymaps ]]
