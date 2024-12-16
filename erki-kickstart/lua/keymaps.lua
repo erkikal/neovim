@@ -107,8 +107,14 @@ keymap("n", "<Leader>5", "5gt<CR>", opts)
 keymap("n", "<Leader>t", "<cmd> tabnew<CR>", opts)
 keymap("n", "<Leader>c", "<cmd> tabclose<CR>", opts)
 
+-- Diagnostic keymaps
+keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+keymap('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
 -- Dismiss Noice Message
-keymap("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
+-- keymap("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
 
 -- Markdown Preview
 keymap({"n", "v"}, "<leader>mp", ":MarkdownPreviewToggle<CR>", opts)
