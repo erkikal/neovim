@@ -89,7 +89,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fe", ":Telescope file_browser<CR>", opts)
 
 keymap("n", "<leader>gs", vim.cmd.Git)
-keymap("n", "<leader>gg", vim.cmd.LazyGit)
+-- keymap("n", "<leader>gg", vim.cmd.LazyGit)
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
@@ -107,8 +107,14 @@ keymap("n", "<Leader>5", "5gt<CR>", opts)
 keymap("n", "<Leader>t", "<cmd> tabnew<CR>", opts)
 keymap("n", "<Leader>c", "<cmd> tabclose<CR>", opts)
 
+-- Diagnostic keymaps
+keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+keymap('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
 -- Dismiss Noice Message
-keymap("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
+-- keymap("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})
 
 -- Markdown Preview
 keymap({"n", "v"}, "<leader>mp", ":MarkdownPreviewToggle<CR>", opts)
