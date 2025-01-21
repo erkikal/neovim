@@ -34,6 +34,19 @@ return {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+
+      require('mini.comment').setup()
+      require('mini.jump').setup()
+      require('mini.pairs').setup()
+      require('mini.move').setup {
+        mappings = {
+          left = 'H',
+          right = 'L',
+          down = 'J',
+          up = 'K',
+        },
+      }
+      require('mini.operators').setup()
     end,
   },
 }
