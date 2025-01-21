@@ -10,26 +10,26 @@ return {
 
   -- File Explorer in Vim Ctrl+f
   {
-  "nvim-telescope/telescope-file-browser.nvim",
-  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  };
-  "ahmedkhalf/project.nvim",
-  "jvgrootveld/telescope-zoxide",
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+  },
+  'ahmedkhalf/project.nvim',
+  'jvgrootveld/telescope-zoxide',
 
   -- Colorschemes
-  "lunarvim/darkplus.nvim",
-  "arcticicestudio/nord-vim",
-  "emacs-grammarly/lsp-grammarly",
+  'lunarvim/darkplus.nvim',
+  'arcticicestudio/nord-vim',
+  'emacs-grammarly/lsp-grammarly',
 
   -- Quick word search under cursor alt+p and alt+n
-  "RRethy/vim-illuminate",
+  'RRethy/vim-illuminate',
 
-  "mbbill/undotree",
+  'mbbill/undotree',
 
   --  "wakatime/vim-wakatime",
-  "Pocco81/auto-save.nvim",
+  -- "Pocco81/auto-save.nvim",
 
   -- "Pocco81/true-zen.nvim",
-  "lambdalisue/suda.vim",
-  "lunarvim/synthwave84.nvim",
+  'lambdalisue/suda.vim',
+  'lunarvim/synthwave84.nvim',
 }
