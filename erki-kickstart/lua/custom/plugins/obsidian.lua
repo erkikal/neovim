@@ -9,15 +9,17 @@ return {
   opts = {
     workspaces = {
       {
-        name = 'Personal',
-        path = '~/OneDrive/Obsidian',
-      },
-      {
         name = 'Work',
         path = '~/Documents/Notes',
       },
     },
-    conceallevel = 1,
+    daily_notes = {
+      folder = 'dailies',
+      date_format = '%Y-%m-%d-%a',
+      alias_format = '%B %-d, %Y',
+      default_tags = { 'daily-notes' },
+      template = nil,
+    },
     completion = {
       nvim_cmp = true,
       min_chars = 2,
@@ -29,6 +31,7 @@ return {
           return require('obsidian').util.gf_passthrough()
         end,
         opts = { noremap = false, expr = true, buffer = true },
+        desc = 'Follow Obsidian links',
       },
       --- Checkbox toggle "Obsidian done"
       ['<leader>md'] = {
@@ -36,6 +39,7 @@ return {
           return require('obsidian').util.toggle_checkbox()
         end,
         opts = { buffer = true },
+        desc = 'Toggle Obsidian Checkbox',
       },
     },
     note_id_func = function(title)
@@ -59,6 +63,12 @@ return {
       date_format = '%Y-%m-%d-%a',
       time_format = '%H:%M',
       tags = '',
+    },
+    tag_mappings = {
+      -- Add tag(s) to current note.
+      tag_note = '<C-x>',
+      -- Insert a tag at the current location.
+      insert_tag = '<C-l>',
     },
   },
 }
