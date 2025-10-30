@@ -26,7 +26,7 @@ return {
   },
   keys = {
     {
-      '<leader>un',
+      '<leader>nd',
       function()
         Snacks.notifier.hide()
       end,
@@ -59,8 +59,8 @@ return {
           Snacks.debug.backtrace()
         end
         vim.print = _G.dd
-        Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>uw'
-        Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>uL'
+        -- Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>uw'
+        -- Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>uL'
       end,
     })
   end,
