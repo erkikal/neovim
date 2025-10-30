@@ -61,10 +61,11 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   -- { import = 'custom.plugins' },
-  require 'custom.plugins.barbecue',
+  -- require 'custom.plugins.barbecue',
   require 'custom.plugins.catppuccin',
   require 'custom.plugins.init',
   require 'custom.plugins.markdown-preview',
+  require 'custom.plugins.markdown-todo',
   require 'custom.plugins.markview',
   require 'custom.plugins.noice',
   require 'custom.plugins.obsidian',
