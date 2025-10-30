@@ -17,9 +17,9 @@ return {
   'jvgrootveld/telescope-zoxide',
 
   -- Colorschemes
-  'lunarvim/darkplus.nvim',
-  'arcticicestudio/nord-vim',
-  'emacs-grammarly/lsp-grammarly',
+  -- 'lunarvim/darkplus.nvim',
+  -- 'arcticicestudio/nord-vim',
+  -- 'emacs-grammarly/lsp-grammarly',
 
   -- Quick word search under cursor alt+p and alt+n
   'RRethy/vim-illuminate',
